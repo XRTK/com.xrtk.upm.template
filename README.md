@@ -7,6 +7,7 @@ Use it to initialize the a repository, then complete the following tasks:
 
 - [ ] Update the embedded Unity project with the proper name (XRTK.{platformname})
 - [ ] Update the embedded Unity package configuration with the proper name
+- [ ] Updae the Azure-Pipelines.yml with the proper name
 - [ ] Update this README to include the proper platform name
 - [ ] Remove this note in this README file
 
