@@ -9,6 +9,7 @@ $excludes = @('*com.xrtk.core*', '*Library*', '*Obj*','*InitializeTemplate*')
 Rename-Item -Path ".\XRTK.PlatformName" -NewName ".\XRTK.$InputName"
 Rename-Item -Path ".\XRTK.$InputName\Packages\com.xrtk.platformname" -NewName "com.xrtk.$($InputName.ToLower())"
 
+#TODO Rename any individual files with updated name
 Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Process {
   $isValid = $true
 
