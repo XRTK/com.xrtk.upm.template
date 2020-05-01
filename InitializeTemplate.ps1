@@ -1,13 +1,13 @@
-$NewPlatformName = Read-Host "Enter a name for your new platform or project"
-$PlatformTemplate = "PlatformName"
+$InputName = Read-Host "Enter a name for your new platform or project"
+$PlatformName = "PlatformName"
 
-Write-Host "Your new $NewPlatformName project is being updated..."
+Write-Host "Your new $InputName project is being updated..."
 
 $excludes = @('*com.xrtk.core*', '*Library*', '*Obj*','*InitializeTemplate*')
 
 # Rename any directories before we crawl the folders
-Rename-Item -Path ".\XRTK.PlatformName" -NewName ".\XRTK.$NewPlatformName"
-Rename-Item -Path ".\XRTK.$NewPlatformName\Packages\com.xrtk.platformname" -NewName "com.xrtk.$($NewPlatformName.ToLower())"
+Rename-Item -Path ".\XRTK.PlatformName" -NewName ".\XRTK.$InputName"
+Rename-Item -Path ".\XRTK.$InputName\Packages\com.xrtk.platformname" -NewName "com.xrtk.$($InputName.ToLower())"
 
 Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Process {
   $isValid = $true
@@ -25,15 +25,15 @@ Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Proce
 
       $fileContent = Get-Content $($_.FullName) -Raw
 
-      if ($fileContent -cmatch $PlatformTemplate) {
-        $fileContent -creplace $PlatformTemplate, $NewPlatformName | Set-Content $($_.FullName)
+      if ($fileContent -cmatch $PlatformName) {
+        $fileContent -creplace $PlatformName, $InputName | Set-Content $($_.FullName)
         $updated = $true
       }
 
       $fileContent = Get-Content $($_.FullName) -Raw
 
-      if ($fileContent -cmatch $PlatformTemplate.ToLower()) {
-        $fileContent -creplace $PlatformTemplate.ToLower(), $NewPlatformName.ToLower() | Set-Content $($_.FullName)
+      if ($fileContent -cmatch $PlatformName.ToLower()) {
+        $fileContent -creplace $PlatformName.ToLower(), $InputName.ToLower() | Set-Content $($_.FullName)
         $updated = $true
       }
 
