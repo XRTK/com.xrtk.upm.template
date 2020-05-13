@@ -2,6 +2,7 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using UnityEngine;
+using XRTK.Utilities.Editor;
 
 namespace XRTK.PlatformName.Editor
 {
@@ -9,7 +10,7 @@ namespace XRTK.PlatformName.Editor
     /// Dummy scriptable object used to find the relative path of the com.xrtk.platformname.
     /// </summary>
     ///// <inheritdoc cref="IPathFinder" />
-    public class PlatformNamePathFinder : ScriptableObject/*, IPathFinder*/
+    public class PlatformNamePathFinder : ScriptableObject, IPathFinder
     {
         ///// <inheritdoc />
         public string Location => $"/Editor/{nameof(PlatformNamePathFinder)}.cs";
