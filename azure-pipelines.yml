@@ -28,9 +28,9 @@ pr:
     - PlatformName/*
     exclude:
       - '*'
-      - PlatformName/Packages/com.xrtk.platformname/README.md
-      - PlatformName/Packages/com.xrtk.platformname/LICENSE.md
-      - PlatformName/Packages/com.xrtk.platformname/.github/*
+      - XRTK.PlatformName/Packages/com.xrtk.platformname/README.md
+      - XRTK.PlatformName/Packages/com.xrtk.platformname/LICENSE.md
+      - XRTK.PlatformName/Packages/com.xrtk.platformname/.github/*
 
 trigger:
   batch: true
@@ -44,9 +44,9 @@ trigger:
       - PlatformName/*
     exclude:
       - '*'
-      - PlatformName/Packages/com.xrtk.platformname/README.md
-      - PlatformName/Packages/com.xrtk.platformname/LICENSE.md
-      - PlatformName/Packages/com.xrtk.platformname/.github/*
+      - XRTK.PlatformName/Packages/com.xrtk.platformname/README.md
+      - XRTK.PlatformName/Packages/com.xrtk.platformname/LICENSE.md
+      - XRTK.PlatformName/Packages/com.xrtk.platformname/.github/*
 
 extends:
   template: azure_pipelines/common.yml
