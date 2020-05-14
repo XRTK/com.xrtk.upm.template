@@ -1,5 +1,5 @@
 variables:
-  project.name: 'PlatformName'
+  project.name: 'XRTK.PlatformName'
   project.upmSha: ''
   package.name: 'com.xrtk.platformname'
   package.version: ''
