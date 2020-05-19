@@ -29,15 +29,29 @@ Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Proce
 
       $fileContent = Get-Content $($_.FullName) -Raw
 
+      # Rename all PascalCase instances
       if ($fileContent -cmatch $PlatformName) {
-        $fileContent -creplace $PlatformName, $InputName | Set-Content $($_.FullName)
+        $fileContent -creplace $PlatformName, $InputName | Set-Content $($_.FullName) -NoNewline
         $updated = $true
       }
 
       $fileContent = Get-Content $($_.FullName) -Raw
 
+      # Rename all lowercase instances
       if ($fileContent -cmatch $PlatformName.ToLower()) {
-        $fileContent -creplace $PlatformName.ToLower(), $InputName.ToLower() | Set-Content $($_.FullName)
+        $fileContent -creplace $PlatformName.ToLower(), $InputName.ToLower() | Set-Content $($_.FullName) -NoNewline
+        $updated = $true
+      }
+
+      # Update guids
+      if($fileContent -match "#INSERT_GUID_HERE#") {
+        $fileContent -replace "#INSERT_GUID_HERE#", [guid]::NewGuid() | Set-Content $($_.FullName) -NoNewline
+        $updated = $true
+      }
+
+      # Rename files
+      if ($_.Name -match $PlatformName) {
+        Rename-Item -LiteralPath $_.FullName -NewName ($_.Name -replace ($PlatformName, $InputName))
         $updated = $true
       }
 
@@ -48,3 +62,4 @@ Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Proce
   }
 }
 
+Remove-Item -Path "InitializeTemplate.ps1"
