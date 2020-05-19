@@ -30,14 +30,14 @@ Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Proce
       $fileContent = Get-Content $($_.FullName) -Raw
 
       if ($fileContent -cmatch $PlatformName) {
-        $fileContent -creplace $PlatformName, $InputName | Set-Content $($_.FullName)
+        $fileContent -creplace $PlatformName, $InputName | Set-Content $($_.FullName) -NoNewline
         $updated = $true
       }
 
       $fileContent = Get-Content $($_.FullName) -Raw
 
       if ($fileContent -cmatch $PlatformName.ToLower()) {
-        $fileContent -creplace $PlatformName.ToLower(), $InputName.ToLower() | Set-Content $($_.FullName)
+        $fileContent -creplace $PlatformName.ToLower(), $InputName.ToLower() | Set-Content $($_.FullName) -NoNewline
         $updated = $true
       }
 
