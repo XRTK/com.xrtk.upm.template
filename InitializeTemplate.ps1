@@ -62,3 +62,4 @@ Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Proce
   }
 }
 
+Remove-Item -Path "InitializeTemplate.ps1"
