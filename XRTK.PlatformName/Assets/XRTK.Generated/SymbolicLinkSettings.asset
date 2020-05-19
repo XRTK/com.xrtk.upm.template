@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   symbolicLinks:
   - sourceRelativePath: /XRTK.PlatformName/Packages/com.xrtk.platformname/Profiles~
-    targetRelativePath: /XRTK.PlatformName/Assets/PlatformName/Profiles
+    targetRelativePath: /XRTK.PlatformName/Assets/XRTK.Generated/PlatformName/Profiles
     isActive: 1
