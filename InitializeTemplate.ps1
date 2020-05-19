@@ -41,6 +41,10 @@ Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Proce
         $updated = $true
       }
 
+      if ($_.Name -match $PlatformName) {
+        Rename-Item -LiteralPath $_.FullName -NewName ($_.Name -replace ($PlatformName, $InputName))
+      }
+
       if ($updated) {
         Write-Host $_.Name
       }
