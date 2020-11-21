@@ -66,4 +66,4 @@ extends:
     # Standalone, Win, Win64, OSXUniversal, Linux64, iOS, Android, WebGL, XboxOne, PS4, WindowsStoreApps, Switch, tvOS, Lumin
     # TODO: Only use XRTK defined platform targets for build
     targets:
-      - StandaloneWindows64
+      - Win64
