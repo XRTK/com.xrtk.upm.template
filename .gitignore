@@ -57,6 +57,12 @@ obj/
 # ============================ #
 .vscode/
 
+# ========================= #
+# Jetbrains Rider Generated #
+# ========================= #
+.idea/
+_ReSharper.Caches
+
 # ===================== #
 # Project Specific List #
 # ===================== #
@@ -64,5 +70,5 @@ artifacts/
 ThirdParty/
 ThirdParty.meta
 --Version/
-XRTK.PlatformName/Assets/XRTK.Generated/PlatformName/Profiles
-XRTK.PlatformName/Assets/XRTK.Generated/PlatformName/Profiles.meta
+XRTK.ProjectName/Assets/XRTK.Generated/ProjectName/Profiles
+XRTK.ProjectName/Assets/XRTK.Generated/ProjectName/Profiles.meta
