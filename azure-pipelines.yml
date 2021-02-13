@@ -33,14 +33,13 @@ pr:
   paths:
     include:
     - azure-pipelines.yml
-    - azure_pipelines/*
     - XRTK.PlatformName/*
     - Submodules/*
     exclude:
       - '*'
+      - XRTK.PlatformName/Packages/com.xrtk.platformname/package.json
       - XRTK.PlatformName/Packages/com.xrtk.platformname/README.md
       - XRTK.PlatformName/Packages/com.xrtk.platformname/LICENSE.md
-      - XRTK.PlatformName/Packages/com.xrtk.platformname/.github/*
 
 trigger:
   batch: true
@@ -50,14 +49,13 @@ trigger:
   paths:
     include:
       - azure-pipelines.yml
-      - azure_pipelines/*
       - XRTK.PlatformName/*
       - Submodules/*
     exclude:
       - '*'
+      - XRTK.PlatformName/Packages/com.xrtk.platformname/package.json
       - XRTK.PlatformName/Packages/com.xrtk.platformname/README.md
       - XRTK.PlatformName/Packages/com.xrtk.platformname/LICENSE.md
-      - XRTK.PlatformName/Packages/com.xrtk.platformname/.github/*
 
 extends:
   template: common.yml@pipeline_repo

@@ -1,10 +1,10 @@
 # Copyright (c) XRTK. All rights reserved.
 # Licensed under the MIT License. See LICENSE in the project root for license information.
 
-$InputName = Read-Host "Enter a name for your new platform or project"
+$InputName = Read-Host "Enter a name for your new project"
 $PlatformName = "PlatformName"
 
-Write-Host "Your new $InputName project is being updated..."
+Write-Host "Your new $InputName project is being created..."
 
 $excludes = @('*com.xrtk.core*', '*Library*', '*Obj*','*InitializeTemplate*')
 
