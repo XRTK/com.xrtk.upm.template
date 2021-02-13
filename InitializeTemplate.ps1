@@ -2,15 +2,15 @@
 # Licensed under the MIT License. See LICENSE in the project root for license information.
 
 $InputName = Read-Host "Enter a name for your new project"
-$PlatformName = "PlatformName"
+$ProjectName = "ProjectName"
 
 Write-Host "Your new $InputName project is being created..."
 
 $excludes = @('*com.xrtk.core*', '*Library*', '*Obj*','*InitializeTemplate*')
 
 # Rename any directories before we crawl the folders
-Rename-Item -Path ".\XRTK.PlatformName" -NewName ".\XRTK.$InputName"
-Rename-Item -Path ".\XRTK.$InputName\Packages\com.xrtk.platformname" -NewName "com.xrtk.$($InputName.ToLower())"
+Rename-Item -Path ".\XRTK.ProjectName" -NewName ".\XRTK.$InputName"
+Rename-Item -Path ".\XRTK.$InputName\Packages\com.xrtk.projectname" -NewName "com.xrtk.$($InputName.ToLower())"
 
 #TODO Rename any individual files with updated name
 Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Process {
@@ -30,16 +30,16 @@ Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Proce
       $fileContent = Get-Content $($_.FullName) -Raw
 
       # Rename all PascalCase instances
-      if ($fileContent -cmatch $PlatformName) {
-        $fileContent -creplace $PlatformName, $InputName | Set-Content $($_.FullName) -NoNewline
+      if ($fileContent -cmatch $ProjectName) {
+        $fileContent -creplace $ProjectName, $InputName | Set-Content $($_.FullName) -NoNewline
         $updated = $true
       }
 
       $fileContent = Get-Content $($_.FullName) -Raw
 
       # Rename all lowercase instances
-      if ($fileContent -cmatch $PlatformName.ToLower()) {
-        $fileContent -creplace $PlatformName.ToLower(), $InputName.ToLower() | Set-Content $($_.FullName) -NoNewline
+      if ($fileContent -cmatch $ProjectName.ToLower()) {
+        $fileContent -creplace $ProjectName.ToLower(), $InputName.ToLower() | Set-Content $($_.FullName) -NoNewline
         $updated = $true
       }
 
@@ -50,8 +50,8 @@ Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Proce
       }
 
       # Rename files
-      if ($_.Name -match $PlatformName) {
-        Rename-Item -LiteralPath $_.FullName -NewName ($_.Name -replace ($PlatformName, $InputName))
+      if ($_.Name -match $ProjectName) {
+        Rename-Item -LiteralPath $_.FullName -NewName ($_.Name -replace ($ProjectName, $InputName))
         $updated = $true
       }
 

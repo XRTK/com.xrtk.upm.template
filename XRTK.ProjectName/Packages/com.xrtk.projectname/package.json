@@ -1,7 +1,7 @@
 {
-  "name": "com.xrtk.platformname",
-  "displayName": "XRTK.PlatformName",
-  "description": "The PlatformName components for the Mixed Reality Toolkit.",
+  "name": "com.xrtk.projectname",
+  "displayName": "XRTK.ProjectName",
+  "description": "The ProjectName components for the Mixed Reality Toolkit.",
   "keywords": [
     "xrtk",
     "vr",
@@ -15,7 +15,7 @@
   "license": "MIT",
   "author": "XRTK Team (https://github.com/XRTK)",
   "dependencies": {
-    "com.xrtk.core": "0.2.0"
+    "com.xrtk.core": "0.2.7"
   },
   "profiles": [
     {
