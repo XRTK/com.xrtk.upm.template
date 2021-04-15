@@ -10,6 +10,7 @@
 [Aa]pp/
 UWP/
 WindowsStoreApp/
+UserSettings/
 UnityGenerated/
 UnityPackageManager/
 .out/
@@ -51,6 +52,7 @@ obj/
 *.log
 *.idb
 *.opendb
+*.vsconfig
 
 # ============================ #
 # Visual Studio Code Generated #
