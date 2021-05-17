@@ -8,9 +8,10 @@
 [Bb]uild/
 [Ll]ibrary/
 [Aa]pp/
+[Aa]pp.meta
+UserSettings/
 UWP/
 WindowsStoreApp/
-UserSettings/
 UnityGenerated/
 UnityPackageManager/
 .out/
@@ -20,6 +21,8 @@ project.lock.json
 *.package
 TextMesh Pro.meta
 TextMesh Pro/
+UIElementsSchema/
+*packages-lock.json
 
 # ============ #
 # Certificates #
@@ -72,5 +75,9 @@ artifacts/
 ThirdParty/
 ThirdParty.meta
 --Version/
+
+# ====================== #
+# Project Symbolic Links #
+# ====================== #
 XRTK.ProjectName/Assets/XRTK.Generated/ProjectName/Profiles
 XRTK.ProjectName/Assets/XRTK.Generated/ProjectName/Profiles.meta
