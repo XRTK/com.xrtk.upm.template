@@ -43,11 +43,15 @@ Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Proce
         $updated = $true
       }
 
+      $fileContent = Get-Content $($_.FullName) -Raw
+
       # Rename all uppercase instances
       if ($fileContent -cmatch $ProjectName.ToUpper()) {
         $fileContent -creplace $ProjectName.ToUpper(), $InputName.ToUpper() | Set-Content $($_.FullName) -NoNewline
         $updated = $true
       }
+
+      $fileContent = Get-Content $($_.FullName) -Raw
 
       # Update guids
       if ($fileContent -match "#INSERT_GUID_HERE#") {
