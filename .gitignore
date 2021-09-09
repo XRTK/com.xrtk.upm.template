@@ -7,15 +7,15 @@
 # =============== #
 # Unity generated #
 # =============== #
-[Tt]emp/
-[Oo]bj/
+[Aa]pp/
+[Aa]pp.meta
 [Bb]in/
 [Bb]uilds/
 [Bb]uild/
 [Ll]ibrary/
 [Ll]ogs/
-[Aa]pp/
-[Aa]pp.meta
+[Oo]bj/
+[Tt]emp/
 UWP/
 WindowsStoreApp/
 UnityGenerated/
