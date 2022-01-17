@@ -13,7 +13,7 @@ Rename-Item -Path ".\XRTK.ProjectName" -NewName ".\XRTK.$InputName"
 Rename-Item -Path ".\XRTK.$InputName\Packages\com.xrtk.projectname" -NewName "com.xrtk.$($InputName.ToLower())"
 
 #TODO Rename any individual files with updated name
-Get-ChildItem -Path "*"-File -Recurse -Exclude $excludes | ForEach-Object -Process {
+Get-ChildItem -Path "*" -File -Recurse -Exclude $excludes | ForEach-Object -Process {
   $isValid = $true
 
   foreach ($exclude in $excludes) {
